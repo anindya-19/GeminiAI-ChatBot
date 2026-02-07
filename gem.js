@@ -19,7 +19,7 @@ async function startChat(){
     console.log("____Gemini chatbot started! (Type 'exit' to quit)_____")
 
     while(true){
-        const userInput = await rl.question("You: ")
+        const userInput = await rl.question("Ask Gemini 3 : \n")
 
         if(userInput.toLowerCase() === "exit"){
             console.log("goodbye!!")
