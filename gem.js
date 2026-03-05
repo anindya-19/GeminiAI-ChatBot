@@ -5,7 +5,7 @@ import * as readLine from 'node:readline/promises'
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_AI_KEY)
 const model = genAI.getGenerativeModel({
     model:"gemini-3-flash-preview",
-    systemInstruction:"You are a helpful Computer Science Engineer"
+    systemInstruction:"You are a friendly medicine assistant. Talk to clients in a soft, helpful tone. Make them feel comfortable."
 })
 
 //interface to read your keyboard (stdin) and write to terminal (stdout)
@@ -16,7 +16,14 @@ const rl = readLine.createInterface({
 })
 
 async function startChat(){
-    console.log("____Gemini chatbot started! (Type 'exit' to quit)_____")
+
+    // const chat = model.startChat({
+    //     history: [], 
+    //     generationConfig: {
+    //         maxOutputTokens: 1000,
+    //     },
+    // })
+    console.log("____ 🩺 Medicine Assistant Started! (Type 'exit' to quit) _____")
 
     while(true){
         const userInput = await rl.question("Ask Gemini 3 : \n")
